@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import SavedList from './Movies/SavedList';
-import { Router } from 'express';
 
 import Movie from "./Movies/Movie";
 import MovieList from "./Movies/MovieList";
@@ -33,12 +32,12 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <Route path="/">
-        <MovieList props={movieList}/>
+      <Route exact path="/">
+        <MovieList movies={movieList}/>
       </Route>
       <Route path="/movies/:id">
         <Movie />
-      </Route>
+      </Route>  
     </div>
   );
 };
